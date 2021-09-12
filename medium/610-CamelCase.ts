@@ -13,7 +13,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type CamelCase<S> = any;
+type CamelCase<S> = S extends `${infer F}-${infer M}` 
+  ? `${F}${M extends Capitalize<M> ? `-${CamelCase<M>}` : CamelCase<Capitalize<M>>}` 
+  : S
 
 
 /* _____________ Test Cases _____________ */
