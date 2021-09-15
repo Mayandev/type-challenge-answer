@@ -10,7 +10,6 @@
   > View on GitHub: https://tsch.js.org/645
 */
 
-
 /* _____________ Your Code Here _____________ */
 
 type Diff<O, O1> = Omit<O & O1, keyof (O | O1)>;

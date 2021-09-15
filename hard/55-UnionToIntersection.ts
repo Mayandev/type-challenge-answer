@@ -18,10 +18,13 @@
 
 
 /* _____________ Your Code Here _____________ */
-
+// U extends any ? (args: U) => void : never
+// (args: 'foo') => void | (args: 42) => void | (args: true) => void
+// 
 type UnionToIntersection<U> = (U extends any ? (args: U) => void : never) extends ((args: infer I) => void) ? I : never;
 
-// type UnionToIntersection<U> =
+type A = (((args: 42) => void) | ((args: 42) => void )| ((args: 42) => void)) extends  ((args: 42) => void) ? true : false;
+
 
 
 /* _____________ Test Cases _____________ */
